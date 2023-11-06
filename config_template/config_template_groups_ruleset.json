@@ -140,7 +140,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)港|hk|hongkong|hong kong)"
+            "(?i)港|hk|hongkong|hong kong"
           ]
         }
       ]
@@ -155,7 +155,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)台|tw|taiwan)"
+            "(?i)台|tw|taiwan"
           ]
         }
       ]
@@ -170,7 +170,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)日本|jp|japan)"
+            "(?i)日本|jp|japan"
           ]
         }
       ]
@@ -185,7 +185,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)新|sg|singapore)"
+            "(?i)新|sg|singapore"
           ]
         }
       ]
@@ -200,7 +200,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)韩|kr|korean)"
+            "(?i)韩|kr|korean"
           ]
         }
       ]
@@ -215,7 +215,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)美|us|unitedstates|united states)"
+            "(?i)美|us|unitedstates|united states"
           ]
         }
       ]
@@ -230,7 +230,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)俄|ru|russia)"
+            "(?i)俄|ru|russia"
           ]
         }
       ]
@@ -245,7 +245,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)土耳其|turkey)"
+            "(?i)土耳其|turkey"
           ]
         }
       ]
@@ -260,7 +260,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|韩|kr|korean|俄|ru|russia|土|tr|turkey)).*)"
+            "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|韩|kr|korean|俄|ru|russia|土|tr|turkey)).*"
           ]
         }
       ]
@@ -275,7 +275,7 @@
         {
           "action": "include",
           "keywords": [
-            "((?i)(OpenAI|ChatGpt))"
+            "(?i)(OpenAI|ChatGpt)"
           ]
         }
       ]
@@ -7987,7 +7987,7 @@
   },
   "experimental": {
     "clash_api": {
-      "external_controller": "127.0.0.1:10000",
+      "external_controller": "127.0.0.1:9999",
       "external_ui_download_url": "",
       "external_ui_download_detour": "",
       "external_ui": "ui",
