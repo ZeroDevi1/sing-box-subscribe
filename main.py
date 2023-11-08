@@ -1,7 +1,7 @@
 import json, os, tool, time, requests, sys, urllib, importlib, argparse, yaml, ruamel.yaml
 import re
 from datetime import datetime
-from urllib.parse import quote
+from urllib.parse import urlparse
 from api.app import TEMP_DIR
 from parsers.clash2base64 import clash2v2ray
 
@@ -115,8 +115,8 @@ def add_emoji(nodes, subscribe):
 def get_nodes(url):
     if url.startswith('sub://'):
         url = tool.b64Decode(url[6:]).decode('utf-8')
-    urlstr = urllib.parse.urlparse(url)
-    if '://' not in url:
+    urlstr = urlparse(url)
+    if '://' not in url and url.startswith('http'):
         try:
             content = tool.b64Decode(url).decode('utf-8')
             data = parse_content(content)
@@ -149,16 +149,11 @@ def get_nodes(url):
                     processed_list.append(item)
             return processed_list
         elif 'outbounds' in content:
-            outbounds_0 = content['outbounds'][0]['outbounds']
-            outbounds_tags = [item["tag"] for item in content["outbounds"][1:]]
-            matching_tags = [tag for tag in outbounds_tags if tag in outbounds_0]
-            filtered_tags = [tag for tag in matching_tags if tag not in ["auto", "direct"]]
-            matching_indices = []
-            for i, outbound in enumerate(content["outbounds"][1:]):
-                if outbound["tag"] in filtered_tags:
-                    matching_indices.append(i + 1)  # 添加1以补偿切片的偏移
-            data = [content["outbounds"][i] for i in matching_indices]
-            return data
+            outbounds = []
+            excluded_types = {"selector", "urltest", "direct", "block", "dns"}
+            filtered_outbounds = [outbound for outbound in content['outbounds'] if outbound.get("type") not in excluded_types]
+            outbounds.extend(filtered_outbounds)
+            return outbounds
     else:
         data = parse_content(content)
         processed_list = []
