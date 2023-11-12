@@ -12,7 +12,7 @@ def saveFile(path,content):
     file.close()
 
 regex_patterns = {
-    '🇭🇰': re.compile(r'香港|沪港|呼港|中港|HKT|HKBN|HGC|WTT|CMI|穗港|广港|京港|HK|Hongkong|Hong Kong|HongKong|HONG KONG'),
+    '🇭🇰': re.compile(r'香港|沪港|呼港|中港|HKT|HKBN|HGC|WTT|CMI|穗港|广港|京港|🇭🇰|HK|Hongkong|Hong Kong|HongKong|HONG KONG'),
     '🇹🇼': re.compile(r'台湾|台灣|臺灣|台北|台中|新北|彰化|台|CHT|HINET|TW|Taiwan|TAIWAN'),
     '🇲🇴': re.compile(r'澳门|澳門|(\s|-)?MO\d*|CTM|MAC|Macao|Macau'),
     '🇸🇬': re.compile(r'新加坡|狮城|獅城|沪新|京新|泉新|穗新|深新|杭新|广新|廣新|滬新|SG|Singapore|SINGAPORE'),
@@ -24,7 +24,7 @@ regex_patterns = {
     '🇮🇳': re.compile(r'印度|孟买|\bIN|IND|India|INDIA|Mumbai'),
     '🇮🇩': re.compile(r'印尼|印度尼西亚|雅加达|ID|IDN|Indonesia'),
     '🇬🇧': re.compile(r'英国|英國|伦敦|UK|England|United Kingdom|Britain'),
-    '🇩🇪': re.compile(r'德国|德國|法兰克福|(\s|-)?DE\d*|(\s|-)?GER\d*|German|GERMAN'),
+    '🇩🇪': re.compile(r'德国|德國|法兰克福|(\s|-)?DE\d*|(\s|-)?GER\d*|🇩🇪|German|GERMAN'),
     '🇫🇷': re.compile(r'法国|法國|巴黎|FR(?!EE)|France'),
     '🇩🇰': re.compile(r'丹麦|丹麥|DK|DNK|Denmark'),
     '🇳🇴': re.compile(r'挪威|(\s|-)?NO\d*|Norway'),
